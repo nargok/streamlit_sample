@@ -4,18 +4,16 @@ import numpy as np
 
 st.title("Sample App")
 
-st.write(np.random.randn(20, 3),)
+if st.button("Click Me"):
+    st.write("Clicked")
 
-df = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c']  
+options = st.multiselect(
+    'What are you favorite colors?',
+    ['Green', 'Yellow', 'Red', 'Blue'],
+    ['Red']
 )
 
-# line_chart
-# st.line_chart(df)
+st.write(f'選択肢: {options}')
 
-# area_chart
-# st.area_chart(df)
-
-# bar_chart
-st.bar_chart(df)
+number = st.slider('pick a number', 0, 100)
+st.write(f'number: {number}')

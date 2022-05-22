@@ -1,18 +1,21 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 st.title("Sample App")
 
-df = pd.DataFrame({
-  '1列目': [1, 2, 3, 4],
-  '2列目': [-1, -2, -3, -4]
-})
+st.write(np.random.randn(20, 3),)
 
-st.dataframe(df.style.highlight_max(axis=0))
+df = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c']  
+)
 
-st.json({
-  "data": {
-    "name": "hoge",
-    "age": 12
-  }
-})
+# line_chart
+# st.line_chart(df)
+
+# area_chart
+# st.area_chart(df)
+
+# bar_chart
+st.bar_chart(df)

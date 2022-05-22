@@ -1,12 +1,18 @@
 import streamlit as st
-st.title('Sample App')
+import pandas as pd
 
-st.markdown("## 見出し2")
-st.markdown("### 見出し3")
+st.title("Sample App")
 
-st.markdown("""
-- task1
-- task2
-""")
+df = pd.DataFrame({
+  '1列目': [1, 2, 3, 4],
+  '2列目': [-1, -2, -3, -4]
+})
 
-st.code('a = 123')
+st.dataframe(df.style.highlight_max(axis=0))
+
+st.json({
+  "data": {
+    "name": "hoge",
+    "age": 12
+  }
+})
